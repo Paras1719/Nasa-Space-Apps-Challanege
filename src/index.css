@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* NASA-inspired dark space theme */
+    --background: 220 27% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 23% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 27% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Cyan/blue primary for air/sky theme */
+    --primary: 193 82% 55%;
+    --primary-foreground: 220 27% 8%;
+    --primary-glow: 193 82% 70%;
+
+    /* Muted slate for secondary elements */
+    --secondary: 215 20% 25%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 20% 20%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 193 82% 45%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Alert colors for air quality */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 27% 8%;
+    
+    --success: 142 71% 45%;
+    --success-foreground: 210 40% 98%;
+
+    --border: 215 20% 20%;
+    --input: 215 20% 18%;
+    --ring: 193 82% 55%;
+
+    --radius: 0.5rem;
+
+    /* Pollutant colors */
+    --pollutant-no2: 45 93% 58%;
+    --pollutant-o3: 280 70% 65%;
+    --pollutant-hcho: 340 82% 60%;
+    --pollutant-pm25: 25 85% 55%;
+
+    /* Data visualization gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(193 82% 45%), hsl(193 82% 70%));
+    --gradient-danger: linear-gradient(135deg, hsl(0 84% 45%), hsl(0 84% 70%));
+    --gradient-success: linear-gradient(135deg, hsl(142 71% 35%), hsl(142 71% 55%));
+    --gradient-space: linear-gradient(180deg, hsl(220 27% 8%), hsl(220 27% 12%));
+    
+    /* Shadows with glow effects */
+    --shadow-glow: 0 0 30px hsl(193 82% 55% / 0.3);
+    --shadow-card: 0 4px 20px hsl(220 27% 4% / 0.5);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  /* Leaflet styles override */
+  .leaflet-container {
+    @apply bg-background;
+  }
+
+  .leaflet-popup-content-wrapper {
+    @apply bg-card text-card-foreground border border-border rounded-lg shadow-lg;
+  }
+
+  .leaflet-popup-tip {
+    @apply bg-card;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+}
+
+@layer components {
+  /* Dashboard grid layout */
+  .dashboard-grid {
+    @apply grid grid-cols-12 gap-4 h-full;
+  }
+
+  /* Stat card styles */
+  .stat-card {
+    @apply bg-card border border-border rounded-lg p-4 transition-all hover:border-primary/50;
+  }
+
+  /* Chart container */
+  .chart-container {
+    @apply w-full h-full bg-card/50 rounded-lg p-4 border border-border;
+  }
+
+  /* Glow effect */
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+}
