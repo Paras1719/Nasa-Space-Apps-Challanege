@@ -6,7 +6,7 @@ NASA TEMPO is an interactive environmental monitoring platform developed for the
 
 ---
 
-## ✨ Key Highlights
+## ✨ Key Highlights          
 
 - 🛰️ Satellite-inspired air quality visualization
 - 🌫️ Multi-pollutant monitoring and analysis
@@ -55,11 +55,5 @@ NASA TEMPO Data Sources
           ↓
  Interactive Maps & Analytics
 ```
-
----
-
-## 🎯 Mission
-
-To make atmospheric and environmental data more accessible, understandable, and actionable through interactive visualizations and real-time air quality intelligence.
 
 > **"From Space to Streets: Making Air Quality Visible, Understandable, and Actionable."** 🚀🌱
